@@ -32,15 +32,18 @@
 		</p>
 		<button onclick="makeNewDiv()">Add end</button>
 	<h1>Namruth builds a merge</h1>
-    <input type="text" placeholder="enter text" id="addend">
+    <input type="text" placeholder="enter text" id="append">
 
+    <button onclick="addFront()">Add front</button>
+
+    <button onclick="remove()">Remove</button>
 	
 </body>
 <script>
 	function makeNewDiv(){
 		/* make the div and its text */
 		let element = document.createElement("div")
-		element.innerHTML = document.getElementById("addend").value;
+		element.innerHTML = document.getElementById("append").value;
 		element.style.color = "orange"
         element.className="merger";
 
@@ -49,5 +52,26 @@
 		container.appendChild(element)
 		
 	}
+
+    function remove() {
+        var mergerItems=document.getElementsByClassName("merger");
+        var length=mergerItems.length;
+        if(length>0){
+            mergerItems[Math.floor(length/2)].remove();            
+        }
+    }
+
+    function addFront(){
+        let element = document.createElement("div")
+		element.innerHTML = document.getElementById("append").value;
+		element.style.color = "green";
+        element.className="merger";
+
+		/* add it to the container */
+		let container = document.getElementById('target')
+		container.insertBefore(element, container.firstChild);
+
+    }
+
 </script>
 </html>	
