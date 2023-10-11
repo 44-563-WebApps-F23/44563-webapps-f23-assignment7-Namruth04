@@ -7,4 +7,4 @@ hosted at[pirate.html](https://44-563-webapps-f23.github.io/44563-webapps-f23-as
 
 hosted at[merger.html](https://44-563-webapps-f23.github.io/44563-webapps-f23-assignment7-Namruth04/merger.html)
 
-hosted at[timeout.html](https://44-563-webapps-f23.github.io/44563-webapps-f23-assignment7-Namruth04/timeout.html)
+hosted at[react.html](https://44-563-webapps-f23.github.io/44563-webapps-f23-assignment7-Namruth04/react.html)
