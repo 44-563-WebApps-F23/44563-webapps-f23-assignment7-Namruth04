@@ -37,6 +37,8 @@
     <button onclick="addFront()">Add front</button>
 
     <button onclick="remove()">Remove</button>
+
+	<button onclick="swap()">Swap</button>
 	
 </body>
 <script>
@@ -72,6 +74,21 @@
 		container.insertBefore(element, container.firstChild);
 
     }
+
+	function swap() {
+		let mergerItems = document.getElementsByClassName("merger");
+		let cont = document.getElementById("target");
+		let ele1 = Math.floor((Math.random() * mergerItems.length)+1);
+		let ele2 = Math.floor((Math.random() * mergerItems.length)+1);
+		let data1 = document.getElementsByClassName("merger")[ele1-1];
+		let data2 = document.getElementsByClassName("merger")[ele2-1];
+
+		if (mergerItems.length > 1) {
+			let tmp = data1.innerHTML;
+			data1.innerHTML = data2.innerHTML;
+			data2.innerHTML = tmp;
+		}
+	}
 
 </script>
 </html>	
