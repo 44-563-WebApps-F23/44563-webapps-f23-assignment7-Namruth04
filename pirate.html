@@ -21,7 +21,7 @@
         <p id="penalty">
             Penalty is zero.
         </p>
-        <p>
+        <p onclick="help()">
             Click for help
         </p>
         <p id="help" style="color: blue;">
@@ -133,22 +133,22 @@
             if(gameOver) return;
             else{
                 id=ids[position];
-                imageElement= document.getElementById(id);
+                image= document.getElementById(id);
 
                 if(id==treasureLocation){
-                    imageElement.src="pirate-image.jpg";
+                    image.src="treasure-box.jpg";
                     gameOver=true;
                     penalty=penalty-3;
 
                 }
                 else if(id==trapLocation){
-                    imageElement.src="trap.jpg";
+                    image.src="trap.jpg";
                     gameOver=true;
                     penalty=penalty+4;
 
                 }
                 else{
-                    imageElement.src="flag.jpg";
+                    image.src="pirate-image.jpg";
                 }
             }
             checkCount=checkCount+1;
@@ -158,17 +158,17 @@
             lastCheck=position;
         }
         function help(){
-            let positionRow=Math.floor(lastCheck/5);
-            let positionRowCol=lastCheck%5;
+            let lastRow=Math.floor(lastCheck/5);
+            let lastCol=lastCheck%5;
             let tressureRow=Math.floor((treasureLocation-1)/5);
             let tressureCol=(treasureLocation-1)%5;
             
-            let far=Math.abs(positionRow-tressureRow)+Math.abs(tressureCol-positionCol);
+            let far=Math.abs(lastRow-tressureRow)+Math.abs(tressureCol-lastCol);
 
-            if(away>2){
+            if(far>2){
                 document.getElementById("help").innerHTML="Step Faster";
             }
-            else if(away==2){
+            else if(far==2){
                 document.getElementById("help").innerHTML="Close Matie";
             }
             else{
@@ -177,6 +177,7 @@
             penalty=penalty+2;
             document.getElementById("penalty").innerHTML='Penalties:'+penalty;
         }
+    
 
     </Script>
 
